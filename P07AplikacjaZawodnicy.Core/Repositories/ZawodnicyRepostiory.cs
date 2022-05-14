@@ -1,13 +1,12 @@
-﻿using P02AplikacjaZawodnicy.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P05AplikacjaZawodnicy.Repositories
+namespace P07AplikacjaZawodnicy.Core.Repositories
 {
-    class ZawodnicyRepository
+    public class ZawodnicyRepository
     {
 
         public Zawodnik[] WczytajZawodnikow()

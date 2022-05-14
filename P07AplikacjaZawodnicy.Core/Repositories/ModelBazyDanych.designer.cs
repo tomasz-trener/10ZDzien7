@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace P02AplikacjaZawodnicy.Repositories
+namespace P07AplikacjaZawodnicy.Core.Repositories
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -36,7 +36,7 @@ namespace P02AplikacjaZawodnicy.Repositories
     #endregion
 		
 		public ModelBazyDanychDataContext() : 
-				base(global::P02AplikacjaZawodnicy.Properties.Settings.Default.A_ZawodnicyConnectionString, mappingSource)
+				base(global::P07AplikacjaZawodnicy.Core.Properties.Settings.Default.A_ZawodnicyConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -80,21 +80,21 @@ namespace P02AplikacjaZawodnicy.Repositories
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id_zawodnika;
+		private int _Id;
 		
-		private System.Nullable<int> _id_trenera;
+		private System.Nullable<int> _IdTrenera;
 		
-		private string _imie;
+		private string _Imie;
 		
-		private string _nazwisko;
+		private string _Nazwisko;
 		
-		private string _kraj;
+		private string _Kraj;
 		
-		private System.Nullable<System.DateTime> _data_ur;
+		private System.Nullable<System.DateTime> _Data_ur;
 		
-		private System.Nullable<int> _wzrost;
+		private System.Nullable<int> _Wzrost;
 		
-		private System.Nullable<int> _waga;
+		private System.Nullable<int> _Waga;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -123,160 +123,160 @@ namespace P02AplikacjaZawodnicy.Repositories
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="id_zawodnika", Storage="_id_zawodnika", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="id_zawodnika", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
 			{
-				return this._id_zawodnika;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._id_zawodnika != value))
+				if ((this._Id != value))
 				{
 					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._id_zawodnika = value;
+					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="id_trenera", Storage="_id_trenera", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="id_trenera", Storage="_IdTrenera", DbType="Int")]
 		public System.Nullable<int> IdTrenera
 		{
 			get
 			{
-				return this._id_trenera;
+				return this._IdTrenera;
 			}
 			set
 			{
-				if ((this._id_trenera != value))
+				if ((this._IdTrenera != value))
 				{
 					this.OnIdTreneraChanging(value);
 					this.SendPropertyChanging();
-					this._id_trenera = value;
+					this._IdTrenera = value;
 					this.SendPropertyChanged("IdTrenera");
 					this.OnIdTreneraChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="imie", Storage="_imie", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="imie", Storage="_Imie", DbType="VarChar(255)")]
 		public string Imie
 		{
 			get
 			{
-				return this._imie;
+				return this._Imie;
 			}
 			set
 			{
-				if ((this._imie != value))
+				if ((this._Imie != value))
 				{
 					this.OnImieChanging(value);
 					this.SendPropertyChanging();
-					this._imie = value;
+					this._Imie = value;
 					this.SendPropertyChanged("Imie");
 					this.OnImieChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="nazwisko", Storage="_nazwisko", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="nazwisko", Storage="_Nazwisko", DbType="VarChar(255)")]
 		public string Nazwisko
 		{
 			get
 			{
-				return this._nazwisko;
+				return this._Nazwisko;
 			}
 			set
 			{
-				if ((this._nazwisko != value))
+				if ((this._Nazwisko != value))
 				{
 					this.OnNazwiskoChanging(value);
 					this.SendPropertyChanging();
-					this._nazwisko = value;
+					this._Nazwisko = value;
 					this.SendPropertyChanged("Nazwisko");
 					this.OnNazwiskoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="kraj", Storage="_kraj", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="kraj", Storage="_Kraj", DbType="VarChar(255)")]
 		public string Kraj
 		{
 			get
 			{
-				return this._kraj;
+				return this._Kraj;
 			}
 			set
 			{
-				if ((this._kraj != value))
+				if ((this._Kraj != value))
 				{
 					this.OnKrajChanging(value);
 					this.SendPropertyChanging();
-					this._kraj = value;
+					this._Kraj = value;
 					this.SendPropertyChanged("Kraj");
 					this.OnKrajChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="data_ur", Storage="_data_ur", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="data_ur", Storage="_Data_ur", DbType="DateTime")]
 		public System.Nullable<System.DateTime> DataUr
 		{
 			get
 			{
-				return this._data_ur;
+				return this._Data_ur;
 			}
 			set
 			{
-				if ((this._data_ur != value))
+				if ((this._Data_ur != value))
 				{
 					this.OnDataUrChanging(value);
 					this.SendPropertyChanging();
-					this._data_ur = value;
+					this._Data_ur = value;
 					this.SendPropertyChanged("DataUr");
 					this.OnDataUrChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="wzrost", Storage="_wzrost", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="wzrost", Storage="_Wzrost", DbType="Int")]
 		public System.Nullable<int> Wzrost
 		{
 			get
 			{
-				return this._wzrost;
+				return this._Wzrost;
 			}
 			set
 			{
-				if ((this._wzrost != value))
+				if ((this._Wzrost != value))
 				{
 					this.OnWzrostChanging(value);
 					this.SendPropertyChanging();
-					this._wzrost = value;
+					this._Wzrost = value;
 					this.SendPropertyChanged("Wzrost");
 					this.OnWzrostChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="waga", Storage="_waga", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="waga", Storage="_Waga", DbType="Int")]
 		public System.Nullable<int> Waga
 		{
 			get
 			{
-				return this._waga;
+				return this._Waga;
 			}
 			set
 			{
-				if ((this._waga != value))
+				if ((this._Waga != value))
 				{
 					this.OnWagaChanging(value);
 					this.SendPropertyChanging();
-					this._waga = value;
+					this._Waga = value;
 					this.SendPropertyChanged("Waga");
 					this.OnWagaChanged();
 				}

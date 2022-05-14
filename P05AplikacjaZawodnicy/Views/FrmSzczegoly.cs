@@ -1,6 +1,8 @@
-﻿using P02AplikacjaZawodnicy.Domain;
-using P02AplikacjaZawodnicy.Repositories;
-using P05AplikacjaZawodnicy.Repositories;
+﻿
+using P05AplikacjaZawodnicy.Operations;
+using P05AplikacjaZawodnicy.ViewModels;
+using P07AplikacjaZawodnicy.Core.Domain;
+using P07AplikacjaZawodnicy.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +24,7 @@ namespace P02AplikacjaZawodnicy.Views
     public partial class FrmSzczegoly : Form
     {
         FrmZawodnicy frmZawodnicy;
-        Zawodnik edytowany;
+        ZawodnikVM edytowany;
 
         private TrybOkienka trybOkienka
         {
@@ -57,7 +59,7 @@ namespace P02AplikacjaZawodnicy.Views
                 cbTrenerzy.SelectedItem = trenerzy.FirstOrDefault(x => x.Id == zaznaczony.Id);
         }
 
-        public FrmSzczegoly(FrmZawodnicy frmZawodnicy, Zawodnik z) : this(frmZawodnicy)
+        public FrmSzczegoly(FrmZawodnicy frmZawodnicy, ZawodnikVM z) : this(frmZawodnicy)
         {
             edytowany = z;
 
@@ -96,9 +98,9 @@ namespace P02AplikacjaZawodnicy.Views
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            Zawodnik z;
+            ZawodnikVM z;
             if (trybOkienka == TrybOkienka.Dodawanie) // to jest sytuacja gdy jestesmy w trybie dodwania 
-                z = new Zawodnik();
+                z = new ZawodnikVM();
             else if (trybOkienka == TrybOkienka.Edycja)
                 z = edytowany;
             else
@@ -112,12 +114,12 @@ namespace P02AplikacjaZawodnicy.Views
             z.Wzrost = Convert.ToInt32(numWzrost.Value);
             z.IdTrenera = ((Trener)cbTrenerzy.SelectedItem).Id;
 
-            ZawodnicyRepository zr = new ZawodnicyRepository();
+            ZawodnicyOperation zo = new ZawodnicyOperation();
 
             if (trybOkienka == TrybOkienka.Dodawanie)
-                zr.DodajZawodnika(z);
+                zo.DodajZawodnikowDoBazy(z);
             else if (trybOkienka == TrybOkienka.Edycja)
-                zr.Edytuj(z);
+                zo.Edytuj(z);
             else
                 throw new NotImplementedException("Nieznany tryb");
             
@@ -134,8 +136,8 @@ namespace P02AplikacjaZawodnicy.Views
 
             if (dr == DialogResult.Yes)
             {
-                ZawodnicyRepository zr = new ZawodnicyRepository();
-                zr.Usun(edytowany);
+                ZawodnicyOperation zo = new ZawodnicyOperation();
+                zo.Usun(edytowany);
                 frmZawodnicy.Odswiez();
                 this.Close();
             }

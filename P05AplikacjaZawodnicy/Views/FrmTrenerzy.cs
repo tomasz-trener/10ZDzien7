@@ -1,5 +1,5 @@
-﻿using P02AplikacjaZawodnicy.Domain;
-using P02AplikacjaZawodnicy.Repositories;
+﻿using P07AplikacjaZawodnicy.Core.Domain;
+using P07AplikacjaZawodnicy.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

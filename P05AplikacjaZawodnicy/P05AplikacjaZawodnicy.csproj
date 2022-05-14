@@ -47,19 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Trener.cs" />
-    <Compile Include="Repositories\ModelBazyDanych.cs">
-      <DependentUpon>ModelBazyDanych.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Repositories\ModelBazyDanych.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelBazyDanych.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Repositories\TrenerzyRepository.cs" />
-    <Compile Include="Repositories\ZawodnicyRepostiory.cs" />
+    <Compile Include="Operations\ZawodnicyOperation.cs" />
     <Compile Include="Tools\DragObject.cs" />
-    <Compile Include="Tools\PolaczenieZBaza.cs" />
+    <Compile Include="ViewModels\ZawodnikVM.cs" />
     <Compile Include="Views\FrmTrenerzy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,14 +97,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Repositories\ModelBazyDanych.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>ModelBazyDanych.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Repositories\ModelBazyDanych.dbml.layout">
-      <DependentUpon>ModelBazyDanych.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -124,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P07AplikacjaZawodnicy.Core\P07AplikacjaZawodnicy.Core.csproj">
+      <Project>{1884de06-5757-4100-9948-62193cae629a}</Project>
+      <Name>P07AplikacjaZawodnicy.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

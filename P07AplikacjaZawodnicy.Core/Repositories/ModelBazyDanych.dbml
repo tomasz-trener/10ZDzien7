@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="A_Zawodnicy" Class="ModelBazyDanychDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa" SettingsObjectName="P07AplikacjaZawodnicy.Core.Properties.Settings" SettingsPropertyName="A_ZawodnicyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.zawodnicy" Member="Zawodnik">
+    <Type Name="Zawodnik">
+      <Column Name="id_zawodnika" Member="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_trenera" Member="IdTrenera" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imie" Member="Imie" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="nazwisko" Member="Nazwisko" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="kraj" Member="Kraj" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="data_ur" Member="DataUr" Storage="_Data_ur" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="wzrost" Member="Wzrost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="waga" Member="Waga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

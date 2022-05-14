@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P02AplikacjaZawodnicy.Tools
+namespace P07AplikacjaZawodnicy.Core.Tools
 {
     class PolaczenieZBaza
     {

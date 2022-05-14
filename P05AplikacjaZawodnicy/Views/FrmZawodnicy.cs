@@ -1,7 +1,8 @@
-﻿using P02AplikacjaZawodnicy.Domain;
-using P02AplikacjaZawodnicy.Repositories;
+﻿
 using P02AplikacjaZawodnicy.Tools;
-using P05AplikacjaZawodnicy.Repositories;
+using P05AplikacjaZawodnicy.Operations;
+
+using P05AplikacjaZawodnicy.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,8 @@ namespace P02AplikacjaZawodnicy.Views
 
         public void Odswiez()
         {
-            ZawodnicyRepository zr = new ZawodnicyRepository();
-            Zawodnik[] zawodnicy = zr.WczytajZawodnikow();
+            ZawodnicyOperation zo = new ZawodnicyOperation();
+            ZawodnikVM[] zawodnicy = zo.PodajZawodnikowZBazy();
             lbDane.DataSource = zawodnicy;
             lbDane.DisplayMember = "Wiersz"; // to musi być właściwość (a nie pole)
         }
@@ -42,7 +43,7 @@ namespace P02AplikacjaZawodnicy.Views
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
-            Zawodnik zaznaczony = (Zawodnik)lbDane.SelectedItem;
+            ZawodnikVM zaznaczony = (ZawodnikVM)lbDane.SelectedItem;
             FrmSzczegoly fs = new FrmSzczegoly(this,zaznaczony);
             fs.Show();
         }
@@ -83,14 +84,14 @@ namespace P02AplikacjaZawodnicy.Views
         {
             DragObject obj = e.Data.GetData(typeof(DragObject)) as DragObject;
 
-            Zawodnik tenPrzeniesiony = (Zawodnik)obj.item;
+            ZawodnikVM tenPrzeniesiony = (ZawodnikVM)obj.item;
             lbNieaktywni.Items.Add(tenPrzeniesiony);
 
 
             lbNieaktywni.DisplayMember = "Wiersz";
 
 
-            List<Zawodnik> zawodnicy= ((Zawodnik[])lbDane.DataSource).ToList();
+            List<ZawodnikVM> zawodnicy= ((ZawodnikVM[])lbDane.DataSource).ToList();
             zawodnicy.RemoveAll(x => x.Id == tenPrzeniesiony.Id);
             lbDane.DataSource = null;
             lbDane.DataSource = zawodnicy.ToArray();

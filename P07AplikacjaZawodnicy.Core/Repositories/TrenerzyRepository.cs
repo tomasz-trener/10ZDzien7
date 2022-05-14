@@ -1,14 +1,15 @@
-﻿using P02AplikacjaZawodnicy.Domain;
-using P02AplikacjaZawodnicy.Tools;
+﻿
+using P07AplikacjaZawodnicy.Core.Domain;
+using P07AplikacjaZawodnicy.Core.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P02AplikacjaZawodnicy.Repositories
+namespace P07AplikacjaZawodnicy.Core.Repositories
 {
-    class TrenerzyRepository
+    public class TrenerzyRepository
     {
 
         public Trener[] WczytajTrenerow()
