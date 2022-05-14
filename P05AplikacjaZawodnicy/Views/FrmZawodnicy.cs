@@ -99,5 +99,17 @@ namespace P02AplikacjaZawodnicy.Views
 
 
         }
+
+        private void btnRaportPDF_Click(object sender, EventArgs e)
+        {
+            ZawodnicyOperation zo = new ZawodnicyOperation();
+
+            string sciezka = DateTime.Now.ToString("yyyyMMddHHmmss") + "Raport.pdf";
+            zo.StworzRaportPDF((ZawodnikVM[])lbDane.DataSource, sciezka);
+
+            //string katalog = @"C:\Users\kurs\source\repos\Week\Dzien7\P05AplikacjaZawodnicy\bin\Debug\";
+            string katalog = AppDomain.CurrentDomain.BaseDirectory;
+            wbPrzegladrka.Navigate(katalog+sciezka);
+        }
     }
 }

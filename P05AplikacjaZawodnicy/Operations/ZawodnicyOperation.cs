@@ -1,6 +1,7 @@
 ﻿
 using P05AplikacjaZawodnicy.ViewModels;
 using P07AplikacjaZawodnicy.Core.Repositories;
+using P07AplikacjaZawodnicy.Core.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +71,15 @@ namespace P05AplikacjaZawodnicy.Operations
             zr.Usun(zawDB);
         }
 
+        public void StworzRaportPDF(ZawodnikVM[] zawodnicy, string sciezka)
+        {
+            PDFManager pdfManager = new PDFManager();
+
+            var zaw = zawodnicy.Select(x => new P07AplikacjaZawodnicy.Core.Domain.Zawodnik() { Imie = x.Imie, Nazwisko = x.Nazwisko, Kraj=x.Kraj }).ToArray();
+
+            
+            pdfManager.WygenerujRaport(zaw, sciezka);
+        }
 
 
     }

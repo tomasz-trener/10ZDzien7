@@ -37,6 +37,8 @@ namespace P02AplikacjaZawodnicy.Views
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbNieaktywni = new System.Windows.Forms.ListBox();
+            this.btnRaportPDF = new System.Windows.Forms.Button();
+            this.wbPrzegladrka = new System.Windows.Forms.WebBrowser();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,7 @@ namespace P02AplikacjaZawodnicy.Views
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRaportPDF);
             this.groupBox1.Controls.Add(this.btnDodaj);
             this.groupBox1.Controls.Add(this.btnEdytuj);
             this.groupBox1.Location = new System.Drawing.Point(250, 132);
@@ -124,11 +127,30 @@ namespace P02AplikacjaZawodnicy.Views
             this.lbNieaktywni.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbNieaktywni_DragDrop);
             this.lbNieaktywni.DragEnter += new System.Windows.Forms.DragEventHandler(this.lbNieaktywni_DragEnter);
             // 
+            // btnRaportPDF
+            // 
+            this.btnRaportPDF.Location = new System.Drawing.Point(6, 77);
+            this.btnRaportPDF.Name = "btnRaportPDF";
+            this.btnRaportPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnRaportPDF.TabIndex = 3;
+            this.btnRaportPDF.Text = "RaportPDF";
+            this.btnRaportPDF.UseVisualStyleBackColor = true;
+            this.btnRaportPDF.Click += new System.EventHandler(this.btnRaportPDF_Click);
+            // 
+            // wbPrzegladrka
+            // 
+            this.wbPrzegladrka.Location = new System.Drawing.Point(565, 39);
+            this.wbPrzegladrka.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbPrzegladrka.Name = "wbPrzegladrka";
+            this.wbPrzegladrka.Size = new System.Drawing.Size(252, 200);
+            this.wbPrzegladrka.TabIndex = 8;
+            // 
             // FrmZawodnicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 250);
+            this.ClientSize = new System.Drawing.Size(880, 251);
+            this.Controls.Add(this.wbPrzegladrka);
             this.Controls.Add(this.lbNieaktywni);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -151,6 +173,8 @@ namespace P02AplikacjaZawodnicy.Views
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lbNieaktywni;
+        private System.Windows.Forms.Button btnRaportPDF;
+        private System.Windows.Forms.WebBrowser wbPrzegladrka;
     }
 }
 
