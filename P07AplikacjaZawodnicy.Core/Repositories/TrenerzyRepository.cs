@@ -71,8 +71,7 @@ namespace P07AplikacjaZawodnicy.Core.Repositories
 
         public void Edytuj(Trener t)
         {
-            string szablon = @"update trenerzy set imie_t='{0}',nazwisko_t='{1}',data_ur_t={2}
-                                where id_trenera = {3}";
+            string szablon = @"update trenerzy set imie_t='{0}',nazwisko_t='{1}',data_ur_t={2} where id_trenera = {3}";
 
             string sql = string.Format(szablon, t.Imie, t.Nazwisko, t.DataUr == null ? "null" : $"'{t.DataUr.Value.ToString("yyyyMMdd")}'", t.Id);
 
