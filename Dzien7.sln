@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02WstepORM", "P02WstepORM\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03OperacjeEdycjiIDodawaniaRekordow", "P03OperacjeEdycjiIDodawaniaRekordow\P03OperacjeEdycjiIDodawaniaRekordow.csproj", "{1C5AD369-6AD1-415C-96AD-6080ED247A73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04AplikacjaZawodnicy", "P04AplikacjaZawodnicy\P04AplikacjaZawodnicy.csproj", "{E47FFAD2-DCCA-4F14-BC1B-4E0606DDC83B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05AplikacjaZawodnicy", "P05AplikacjaZawodnicy\P05AplikacjaZawodnicy.csproj", "{53C60172-7C36-43EC-9A02-136AA8F5D542}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1C5AD369-6AD1-415C-96AD-6080ED247A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C5AD369-6AD1-415C-96AD-6080ED247A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C5AD369-6AD1-415C-96AD-6080ED247A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47FFAD2-DCCA-4F14-BC1B-4E0606DDC83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47FFAD2-DCCA-4F14-BC1B-4E0606DDC83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47FFAD2-DCCA-4F14-BC1B-4E0606DDC83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47FFAD2-DCCA-4F14-BC1B-4E0606DDC83B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C60172-7C36-43EC-9A02-136AA8F5D542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C60172-7C36-43EC-9A02-136AA8F5D542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C60172-7C36-43EC-9A02-136AA8F5D542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C60172-7C36-43EC-9A02-136AA8F5D542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
