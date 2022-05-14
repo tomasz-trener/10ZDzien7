@@ -77,6 +77,33 @@ namespace P01WstepLINQ
                            select new { x.Imie, x.Nazwisko, x.BMI }).ToArray();
 
 
+            var wynik17 = zawodnicy.OrderBy(x => x.Kraj).ToArray();
+            var wynik18 = zawodnicy.OrderByDescending(x => x.Kraj).ToArray();
+
+            var wynik19 = zawodnicy.OrderBy(x => x.Kraj).ThenBy(x=>x.Wzrost).ToArray();
+
+
+            string[] wynik20=  zawodnicy.GroupBy(x => x.Kraj).Select(x => x.Key).ToArray();
+
+            string[] wynik21=  zawodnicy.Select(x => x.Kraj).Distinct().ToArray();
+
+            var wynik22 = zawodnicy.GroupBy(x=>x.Kraj).Select(x=> new {Kraj = x.Key, SredniWzrost= x.Average(y=>y.Wzrost) }).ToArray();
+
+            foreach (var z in wynik22)
+                Console.WriteLine(z.Kraj + " " + z.SredniWzrost);
+
+
+            int maxWzrost= zawodnicy.Max(x => x.Wzrost);
+            string kraj= zawodnicy.Where(x => x.Wzrost == maxWzrost).Select(x => x.Kraj).ToArray()[0];
+            var wynik23= zawodnicy.Where(x => x.Kraj == kraj);
+
+            zawodnicy.Where(x => x.Kraj == 
+                                zawodnicy.Where(y => y.Wzrost == 
+                                    zawodnicy.Max(z => z.Wzrost))
+                                .Select(y => y.Kraj).ToArray()[0])
+                     .ToArray();
+
+
 
 
 
